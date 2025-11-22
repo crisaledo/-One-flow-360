@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,16 +22,16 @@
   <div class="flex min-h-screen">
 
     <!-- Sidebar -->
-    <aside class="w-64 bg-gray-900 text-gray-200 p-6 space-y-4" role="navigation" aria-label="Navegação principal">
+    <aside class="w-64 bg-gray-900 text-gray-200 p-6 space-y-4" role="navigation" aria-label="Main navigation">
       <h2 class="text-xl font-bold mb-6">CRM Light</h2>
 
       <div class="space-y-2" role="tablist" aria-orientation="vertical">
         <button class="menu-item p-2 rounded menu-active w-full text-left" data-tab="dashboard" aria-selected="true" role="tab">📊 Dashboard</button>
         <button class="menu-item p-2 rounded w-full text-left" data-tab="leads" aria-selected="false" role="tab">👥 Leads</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="clientes" aria-selected="false" role="tab">🧑‍💼 Clientes</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="agenda" aria-selected="false" role="tab">📅 Agenda</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="automations" aria-selected="false" role="tab">⚙️ Automações</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="config" aria-selected="false" role="tab">🔧 Configurações</button>
+        <button class="menu-item p-2 rounded w-full text-left" data-tab="clients" aria-selected="false" role="tab">🧑‍💼 Clients</button>
+        <button class="menu-item p-2 rounded w-full text-left" data-tab="schedule" aria-selected="false" role="tab">📅 Schedule</button>
+        <button class="menu-item p-2 rounded w-full text-left" data-tab="automations" aria-selected="false" role="tab">⚙️ Automations</button>
+        <button class="menu-item p-2 rounded w-full text-left" data-tab="settings" aria-selected="false" role="tab">🔧 Settings</button>
       </div>
     </aside>
 
@@ -39,8 +39,8 @@
     <main class="flex-1 p-10" role="main">
 
       <!-- DASHBOARD -->
-      <section id="dashboard" class="tab-content tab-active" role="region" aria-labelledby="h-dashboard" aria-hidden="false">
-        <h1 id="h-dashboard" class="text-2xl font-bold mb-4">Dashboard</h1>
+      <section id="dashboard" class="tab-content tab-active" role="region" aria-hidden="false">
+        <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -50,12 +50,12 @@
           </div>
 
           <div class="bg-white p-6 rounded shadow">
-            <h3 class="text-gray-500 text-sm">Clientes Ativos</h3>
+            <h3 class="text-gray-500 text-sm">Active Clients</h3>
             <p class="text-3xl font-bold mt-2">42</p>
           </div>
 
           <div class="bg-white p-6 rounded shadow">
-            <h3 class="text-gray-500 text-sm">Tarefas Hoje</h3>
+            <h3 class="text-gray-500 text-sm">Tasks Today</h3>
             <p class="text-3xl font-bold mt-2">7</p>
           </div>
 
@@ -63,18 +63,18 @@
       </section>
 
       <!-- LEADS -->
-      <section id="leads" class="tab-content" role="region" aria-labelledby="h-leads" aria-hidden="true">
-        <h1 id="h-leads" class="text-2xl font-bold mb-4">Leads</h1>
+      <section id="leads" class="tab-content" role="region" aria-hidden="true">
+        <h1 class="text-2xl font-bold mb-4">Leads</h1>
 
         <div class="bg-white p-6 rounded shadow">
-          <label class="sr-only" for="buscar-lead">Buscar lead</label>
-          <input id="buscar-lead" type="text" placeholder="Buscar lead..." class="border p-2 rounded w-full mb-4">
+          <label class="sr-only" for="search-lead">Search lead</label>
+          <input id="search-lead" type="text" placeholder="Search lead..." class="border p-2 rounded w-full mb-4">
 
           <table class="w-full text-left">
             <thead>
               <tr class="border-b">
-                <th class="p-2">Nome</th>
-                <th class="p-2">Telefone</th>
+                <th class="p-2">Name</th>
+                <th class="p-2">Phone</th>
                 <th class="p-2">Status</th>
               </tr>
             </thead>
@@ -82,83 +82,83 @@
               <tr class="border-b">
                 <td class="p-2">Maria Souza</td>
                 <td class="p-2">(407) 555-9812</td>
-                <td class="p-2 text-green-600 font-semibold">Novo</td>
+                <td class="p-2 text-green-600 font-semibold">New</td>
               </tr>
               <tr class="border-b">
                 <td class="p-2">Carlos Lima</td>
                 <td class="p-2">(321) 882-1221</td>
-                <td class="p-2 text-yellow-600 font-semibold">Negociando</td>
+                <td class="p-2 text-yellow-600 font-semibold">Negotiating</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <!-- CLIENTES -->
-      <section id="clientes" class="tab-content" role="region" aria-labelledby="h-clientes" aria-hidden="true">
-        <h1 id="h-clientes" class="text-2xl font-bold mb-4">Clientes</h1>
+      <!-- CLIENTS -->
+      <section id="clients" class="tab-content" role="region" aria-hidden="true">
+        <h1 class="text-2xl font-bold mb-4">Clients</h1>
 
         <div class="bg-white p-6 rounded shadow">
-          <p class="text-gray-600 mb-4">Lista de clientes cadastrados</p>
+          <p class="text-gray-600 mb-4">List of registered clients</p>
 
           <ul class="space-y-3">
             <li class="p-3 bg-gray-50 rounded shadow flex justify-between">
-              <span>João Mendes</span>
-              <span class="text-sm text-gray-500">Cliente desde 2023</span>
+              <span>John Mendes</span>
+              <span class="text-sm text-gray-500">Client since 2023</span>
             </li>
             <li class="p-3 bg-gray-50 rounded shadow flex justify-between">
               <span>Paula Fernandes</span>
-              <span class="text-sm text-gray-500">Cliente desde 2024</span>
+              <span class="text-sm text-gray-500">Client since 2024</span>
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- AGENDA -->
-      <section id="agenda" class="tab-content" role="region" aria-labelledby="h-agenda" aria-hidden="true">
-        <h1 id="h-agenda" class="text-2xl font-bold mb-4">Agenda</h1>
+      <!-- SCHEDULE -->
+      <section id="schedule" class="tab-content" role="region" aria-hidden="true">
+        <h1 class="text-2xl font-bold mb-4">Schedule</h1>
 
         <div class="bg-white p-6 rounded shadow">
           <div class="space-y-4">
             <div class="p-3 border rounded">
-              <p class="font-semibold">🕒 10:00 AM — Reunião com cliente</p>
-              <p class="text-gray-500 text-sm">Sobre campanha de tráfego pago</p>
+              <p class="font-semibold">🕒 10:00 AM — Client Meeting</p>
+              <p class="text-gray-500 text-sm">Discuss marketing strategy</p>
             </div>
             <div class="p-3 border rounded">
-              <p class="font-semibold">🕒 2:30 PM — Call de proposta</p>
-              <p class="text-gray-500 text-sm">Construtora SP</p>
+              <p class="font-semibold">🕒 2:30 PM — Proposal Call</p>
+              <p class="text-gray-500 text-sm">Real Estate Company</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- AUTOMAÇÕES -->
-      <section id="automations" class="tab-content" role="region" aria-labelledby="h-automations" aria-hidden="true">
-        <h1 id="h-automations" class="text-2xl font-bold mb-4">Automações</h1>
+      <!-- AUTOMATIONS -->
+      <section id="automations" class="tab-content" role="region" aria-hidden="true">
+        <h1 class="text-2xl font-bold mb-4">Automations</h1>
 
         <div class="bg-white p-6 rounded shadow">
-          <p class="text-gray-600 mb-4">Crie fluxos automatizados:</p>
+          <p class="text-gray-600 mb-4">Create automated workflows:</p>
 
-          <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded">Criar Novo Fluxo</button>
+          <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded">Create New Workflow</button>
         </div>
       </section>
 
-      <!-- CONFIGURAÇÕES -->
-      <section id="config" class="tab-content" role="region" aria-labelledby="h-config" aria-hidden="true">
-        <h1 id="h-config" class="text-2xl font-bold mb-4">Configurações</h1>
+      <!-- SETTINGS -->
+      <section id="settings" class="tab-content" role="region" aria-hidden="true">
+        <h1 class="text-2xl font-bold mb-4">Settings</h1>
 
         <div class="bg-white p-6 rounded shadow">
-          <p class="text-gray-600 mb-4">Ajuste preferências do CRM</p>
+          <p class="text-gray-600 mb-4">Adjust CRM preferences</p>
 
           <div class="space-y-3">
             <label>
-              <span class="text-gray-700">Nome da empresa</span>
+              <span class="text-gray-700">Company Name</span>
               <input type="text" class="border p-2 rounded w-full" placeholder="Ex: Webwise AYA.IA">
             </label>
 
             <label>
-              <span class="text-gray-700">Email de suporte</span>
-              <input type="email" class="border p-2 rounded w-full" placeholder="exemplo@empresa.com">
+              <span class="text-gray-700">Support Email</span>
+              <input type="email" class="border p-2 rounded w-full" placeholder="example@company.com">
             </label>
           </div>
         </div>
@@ -169,24 +169,21 @@
 
   <!-- Script -->
   <script>
-    // Usando event listeners evita depender da variável global "event"
     document.querySelectorAll('.menu-item').forEach(btn => {
       btn.addEventListener('click', function () {
         const tabName = this.dataset.tab;
-        // Remover estado de painéis
+
         document.querySelectorAll('.tab-content').forEach(t => {
           t.classList.remove('tab-active');
           t.setAttribute('aria-hidden', 'true');
         });
 
-        // Ativar painel selecionado (se existir)
         const panel = document.getElementById(tabName);
         if (panel) {
           panel.classList.add('tab-active');
           panel.setAttribute('aria-hidden', 'false');
         }
 
-        // Atualizar estado do menu
         document.querySelectorAll('.menu-item').forEach(i => {
           i.classList.remove('menu-active');
           i.setAttribute('aria-selected', 'false');
@@ -196,26 +193,7 @@
         this.setAttribute('aria-selected', 'true');
       });
     });
-
-    // (Opcional) permitir navegação por teclado com setas
-    document.addEventListener('keydown', function (e) {
-      const active = document.querySelector('.menu-item[aria-selected="true"]');
-      if (!active) return;
-      const items = Array.from(document.querySelectorAll('.menu-item'));
-      const idx = items.indexOf(active);
-      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        const next = items[(idx + 1) % items.length];
-        next.focus();
-        next.click();
-        e.preventDefault();
-      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        const prev = items[(idx - 1 + items.length) % items.length];
-        prev.focus();
-        prev.click();
-        e.preventDefault();
-      }
-    });
   </script>
 
 </body>
-</html>
+</html>        
