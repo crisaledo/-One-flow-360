@@ -26,12 +26,12 @@
       <h2 class="text-xl font-bold mb-6">CRM Light</h2>
 
       <div class="space-y-2" role="tablist" aria-orientation="vertical">
-        <button class="menu-item p-2 rounded menu-active w-full text-left" data-tab="dashboard" aria-selected="true" role="tab">📊 Dashboard</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="leads" aria-selected="false" role="tab">👥 Leads</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="clients" aria-selected="false" role="tab">🧑‍💼 Clients</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="schedule" aria-selected="false" role="tab">📅 Schedule</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="automations" aria-selected="false" role="tab">⚙️ Automations</button>
-        <button class="menu-item p-2 rounded w-full text-left" data-tab="settings" aria-selected="false" role="tab">🔧 Settings</button>
+        <button class="menu-item p-2 rounded menu-active w-full text-left" id="tab-dashboard" data-tab="dashboard" aria-selected="true" aria-controls="dashboard" role="tab">📊 Dashboard</button>
+        <button class="menu-item p-2 rounded w-full text-left" id="tab-leads" data-tab="leads" aria-selected="false" aria-controls="leads" role="tab">👥 Leads</button>
+        <button class="menu-item p-2 rounded w-full text-left" id="tab-clients" data-tab="clients" aria-selected="false" aria-controls="clients" role="tab">🧑‍💼 Clients</button>
+        <button class="menu-item p-2 rounded w-full text-left" id="tab-schedule" data-tab="schedule" aria-selected="false" aria-controls="schedule" role="tab">📅 Schedule</button>
+        <button class="menu-item p-2 rounded w-full text-left" id="tab-automations" data-tab="automations" aria-selected="false" aria-controls="automations" role="tab">⚙️ Automations</button>
+        <button class="menu-item p-2 rounded w-full text-left" id="tab-settings" data-tab="settings" aria-selected="false" aria-controls="settings" role="tab">🔧 Settings</button>
       </div>
     </aside>
 
@@ -39,7 +39,7 @@
     <main class="flex-1 p-10" role="main">
 
       <!-- DASHBOARD -->
-      <section id="dashboard" class="tab-content tab-active" role="region" aria-hidden="false">
+      <section id="dashboard" class="tab-content tab-active" role="tabpanel" aria-labelledby="tab-dashboard" aria-hidden="false">
         <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -63,7 +63,7 @@
       </section>
 
       <!-- LEADS -->
-      <section id="leads" class="tab-content" role="region" aria-hidden="true">
+      <section id="leads" class="tab-content" role="tabpanel" aria-labelledby="tab-leads" aria-hidden="true">
         <h1 class="text-2xl font-bold mb-4">Leads</h1>
 
         <div class="bg-white p-6 rounded shadow">
@@ -95,7 +95,7 @@
       </section>
 
       <!-- CLIENTS -->
-      <section id="clients" class="tab-content" role="region" aria-hidden="true">
+      <section id="clients" class="tab-content" role="tabpanel" aria-labelledby="tab-clients" aria-hidden="true">
         <h1 class="text-2xl font-bold mb-4">Clients</h1>
 
         <div class="bg-white p-6 rounded shadow">
@@ -115,7 +115,7 @@
       </section>
 
       <!-- SCHEDULE -->
-      <section id="schedule" class="tab-content" role="region" aria-hidden="true">
+      <section id="schedule" class="tab-content" role="tabpanel" aria-labelledby="tab-schedule" aria-hidden="true">
         <h1 class="text-2xl font-bold mb-4">Schedule</h1>
 
         <div class="bg-white p-6 rounded shadow">
@@ -133,7 +133,7 @@
       </section>
 
       <!-- AUTOMATIONS -->
-      <section id="automations" class="tab-content" role="region" aria-hidden="true">
+      <section id="automations" class="tab-content" role="tabpanel" aria-labelledby="tab-automations" aria-hidden="true">
         <h1 class="text-2xl font-bold mb-4">Automations</h1>
 
         <div class="bg-white p-6 rounded shadow">
@@ -144,21 +144,21 @@
       </section>
 
       <!-- SETTINGS -->
-      <section id="settings" class="tab-content" role="region" aria-hidden="true">
+      <section id="settings" class="tab-content" role="tabpanel" aria-labelledby="tab-settings" aria-hidden="true">
         <h1 class="text-2xl font-bold mb-4">Settings</h1>
 
         <div class="bg-white p-6 rounded shadow">
           <p class="text-gray-600 mb-4">Adjust CRM preferences</p>
 
           <div class="space-y-3">
-            <label>
+            <label for="company-name">
               <span class="text-gray-700">Company Name</span>
-              <input type="text" class="border p-2 rounded w-full" placeholder="Ex: Webwise AYA.IA">
+              <input id="company-name" type="text" class="border p-2 rounded w-full" placeholder="Ex: Webwise AYA.IA">
             </label>
 
-            <label>
+            <label for="support-email">
               <span class="text-gray-700">Support Email</span>
-              <input type="email" class="border p-2 rounded w-full" placeholder="example@company.com">
+              <input id="support-email" type="email" class="border p-2 rounded w-full" placeholder="example@company.com">
             </label>
           </div>
         </div>
