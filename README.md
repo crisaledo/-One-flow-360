@@ -1,84 +1,100 @@
-# CRM Light com Assistente Gemini Personalizável
+# CRM Light with Customizable Gemini Assistant
 
-Este é um Sistema de Gerenciamento de Relacionamento com o Cliente (CRM) leve e de arquivo único, projetado para pequenas empresas e freelancers. Ele integra funcionalidades básicas de gestão de leads, agendamentos e automações, além de um assistente de conteúdo baseado na API Gemini.
+This is a lightweight, single-file Customer Relationship Management (CRM) system designed for small businesses and freelancers. It integrates basic lead management, scheduling, and automation features, along with a content assistant powered by the Gemini API.
 
-## 🚀 Funcionalidades Principais
+## 🚀 Key Features
 
-- Gestão de Leads: Adicione, visualize e gerencie clientes potenciais com status (Novo, Contatado, Agendado, Ganho, Perdido).
-- Gestão de Agendamentos: Adicione compromissos com detalhes de serviço e notas.
-- Automações simples: Ao agendar um serviço, o sistema pode atualizar o status do lead automaticamente.
-- Assistente de Conteúdo Gemini Personalizável: configure persona, tom e instruções do assistente e gere e-mails, posts ou mensagens de acompanhamento.
-- Ações rápidas: copiar conteúdo gerado ou enviar para WhatsApp do lead.
+- **Lead Management**: Add, view, and manage potential clients with statuses (New, Contacted, Scheduled, Won, Lost).
+- **Schedule Management**: Add appointments with service details and notes.
+- **Simple Automations**: When scheduling a service, the system can automatically update the lead status.
+- **Customizable Gemini Content Assistant**: Configure persona, tone, and assistant instructions to generate emails, posts, or follow-up messages.
+- **Quick Actions**: Copy generated content or send to lead's WhatsApp.
 
-## 🛠️ Tecnologias
+## 🛠️ Tech Stack
 
-- Frontend: HTML5, JavaScript (ES6+), Tailwind CSS (via CDN)
-- Backend/Dados: Google Firestore
-- Inteligência Artificial: Gemini API
+- **Frontend**: HTML5, JavaScript (ES6+), Tailwind CSS (via CDN)
+- **Backend/Data**: Google Firestore
+- **AI**: Gemini API
 
-## ⚙️ Instalação e Uso Rápido
+## ⚙️ Quick Install & Run
 
-1. Clone o repositório:
-   git clone https://github.com/crisaledo/-One-flow-360.git
-2. Abra o arquivo index.html em um servidor local (recomendado) ou diretamente no navegador. Para um servidor simples:
-   - Python 3: python -m http.server 8000
-   - Node (http-server): npx http-server . -p 8000
-3. Configure as credenciais do Firebase e da API Gemini conforme seu ambiente (variáveis ou arquivo de configuração). Não suba chaves privadas ao repo.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/crisaledo/One-flow-360.git
+   cd One-flow-360
+   ```
 
-## ✅ Checklist de Acessibilidade (simples)
-Use esta checklist para testar rapidamente aspectos essenciais de acessibilidade antes de publicar.
+2. Open the `index.html` file in a local server (recommended) or directly in your browser. For a simple server:
+   - **Python 3**: `python -m http.server 8000`
+   - **Node (http-server)**: `npx http-server . -p 8000`
 
-- [ ] Elementos clicáveis são acessíveis por teclado (Tab/Enter/Space).
-  - Como testar: navegue com Tab e ative menu/ações com Enter ou Space.
-  - Resultado esperado: foco visível e ação executada.
-- [ ] Uso correto de elementos semânticos (buttons, headings, labels).
-  - Como testar: inspecione o HTML e confirme botões para ações e labels para inputs.
-- [ ] Estados ARIA básicos para tabs/painéis.
-  - Como testar: verifique aria-selected e aria-hidden ao navegar entre abas.
-- [ ] Contaste de cores suficiente para texto e elementos interativos.
-  - Como testar: use https://contrast-ratio.com/ ou a extensão Lighthouse/AXE.
-  - Resultado esperado: contraste >= 4.5:1 para texto normal.
-- [ ] Inputs têm labels associados (visíveis ou sr-only).
-  - Como testar: verifique se cada input tem um label ou aria-label.
-- [ ] Foco visível em elementos interativos.
-  - Como testar: navegue com teclado e confira outlines ou estilos de foco.
-- [ ] Conteúdo legível em diferentes tamanhos de tela (responsividade).
-  - Como testar: redimensione a janela ou use as ferramentas do devtools.
-- [ ] Navegação por leitores de tela (básico).
-  - Como testar: abra um leitor de tela (NVDA/VoiceOver) e confira se a ordem/semântica faz sentido.
+3. Configure Firebase and Gemini API credentials:
+   - Copy `.env.example` to `.env`
+   - Add your Firebase and Gemini API keys
+   - **Never commit private keys to the repository**
 
-## 🧪 Testes de Usabilidade Simples (passos manuais)
-Execute estes testes rapidamente para garantir o fluxo principal funciona.
+## ✅ Accessibility Checklist
 
-- Teste 1 — Navegação das abas
-  1. Abra a página.
-  2. Clique em cada item do menu lateral.
-  3. Verifique se o painel correspondente é mostrado e o menu recebe o estado ativo.
-  4. Resultado esperado: conteúdo muda sem erros e aria-selected/aria-hidden atualizados.
+Use this checklist to quickly test essential accessibility aspects before publishing:
 
-- Teste 2 — Busca de leads (campo de exemplo)
-  1. Digite no campo "Buscar lead..." e observe comportamento (se houver filtro implementado).
-  2. Resultado esperado: não há erro JS e campo é editável com keyboard.
+- [ ] **Keyboard accessible clickable elements** (Tab/Enter/Space)
+  - How to test: Navigate with Tab and activate menu/actions with Enter or Space
+  - Expected result: Visible focus and action executed
 
-- Teste 3 — Acessibilidade de formulários
-  1. Abra Configurações e navegue até inputs.
-  2. Teste preencher nome e email.
-  3. Resultado esperado: labels visíveis ou associadas e inputs aceitam entrada.
+- [ ] **Proper use of semantic elements** (buttons, headings, labels)
+  - How to test: Inspect HTML and confirm buttons for actions and labels for inputs
 
-- Teste 4 — Responsividade rápida
-  1. Abra em uma tela pequena (mobile) ou use devtools.
-  2. Verifique se layout não quebra e elementos ficam visíveis/acionáveis.
+- [ ] **Basic ARIA states for tabs/panels**
+  - How to test: Verify aria-selected and aria-hidden when navigating between tabs
 
-## Como contribuir
-- Abra uma issue descrevendo o problema ou a melhoria.
-- Faça um fork, crie uma branch com o seu ajuste e envie um Pull Request.
+- [ ] **Sufficient color contrast** for text and interactive elements
+  - How to test: Use https://contrast-ratio.com/ or Lighthouse/AXE extension
+  - Expected result: Contrast >= 4.5:1 for normal text
 
-## Segurança
-- Nunca inclua chaves de API ou credenciais no repositório público. Use variáveis de ambiente ou um arquivo de configuração que esteja no .gitignore.
+- [ ] **Inputs have associated labels** (visible or sr-only)
+  - How to test: Verify each input has a label or aria-label
 
-## Contato
-Para dúvidas, abra uma issue ou contate: crisaledo (GitHub)
+- [ ] **Visible focus on interactive elements**
+  - How to test: Navigate with keyboard and check outlines or focus styles
 
-----
+- [ ] **Readable content at different screen sizes** (responsiveness)
+  - How to test: Resize window or use devtools
 
-(Adicionado checklist de acessibilidade e instruções de testes de usabilidade simples.)
+- [ ] **Screen reader navigation** (basic)
+  - How to test: Open a screen reader (NVDA/VoiceOver) and verify order/semantics make sense
+
+## 🧪 Simple Usability Tests (manual steps)
+
+Run these tests quickly to ensure the main flow works:
+
+- **Test 1 — Tab Navigation**
+  1. Open the page
+  2. Click each sidebar menu item
+  3. Verify the corresponding panel is shown and menu receives active state
+  4. Expected result: Content changes without errors and aria-selected/aria-hidden updated
+
+- **Test 2 — Lead Search (example field)**
+  1. Type in "Search lead..." field and observe behavior (if filter implemented)
+  2. Expected result: No JS errors and field is keyboard editable
+
+- **Test 3 — Form Accessibility**
+  1. Open Settings and navigate to inputs
+  2. Test filling name and email
+  3. Expected result: Visible or associated labels and inputs accept entry
+
+- **Test 4 — Quick Responsiveness**
+  1. Open on a small screen (mobile) or use devtools
+  2. Verify layout doesn't break and elements remain visible/actionable
+
+## 🤝 How to Contribute
+
+- Open an issue describing the problem or improvement
+- Fork the repository, create a branch with your changes, and submit a Pull Request
+
+## 🔒 Security
+
+- **Never include API keys or credentials in the public repository**. Use environment variables or a configuration file that is in `.gitignore`.
+
+## 📧 Contact
+
+For questions, open an issue or contact: crisaledo (GitHub)
